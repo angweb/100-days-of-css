@@ -1,4 +1,3 @@
 # 100-days-of-css
 100 days of css
-
-This is Luke, hello Airen
+我的第一天 100-days-of-js
