@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+ <meta charset="UTF-8">
+ <head> 
+  <title>自定义属性--QQ收缩</title> 
+ </head> 
+ <style type="text/css">
+  .box{
+    width: 400px;
+    margin: 0 auto;
+    background: #ecf0f1;
+    padding: 0 10px;
+    margin-top: 100px;
+  }
+  .box li{
+    line-height: 40px;
+    list-style: none;
+     margin: 0;
+    padding: 0;
+  }
+  .box li ul{
+    display: none;
+    margin: 0;
+    padding: 0;
+    text-indent: 18px;
+  }
+  .box li ul li{
+    border-bottom: 1px solid #fff;
+    margin: 0 -10px;
+  }
+  h2{
+    margin:0 -10px;
+    padding: 0;
+    background:#3ccef3 url(img/ico1.gif) 10px center no-repeat;
+    padding-left: 20px;
+    font-size: 24px;
+    color: #fff;
+  }
+  .active{
+    background:#1090b0 url(img/ico2.gif) 10px center no-repeat;
+  }
+  .hover{
+    background:rgba(0,0,0,.2);
+    color: #fff;
+  }
+ </style>
+ <body> 
+  <ul class="box" id="list">
+    <li>
+      <h2>我的好友</h2>
+      <ul>
+        <li>刘诗诗</li>
+        <li>胡歌</li>
+        <li>彭于晏</li>
+        <li>陈奕迅</li>
+      </ul>
+    </li>
+    <li>
+      <h2>同学</h2>
+      <ul>
+        <li>祝海洋</li>
+        <li>刘雨</li>
+        <li>李慧</li>
+      </ul>
+    </li>
+    <li>
+      <h2>黑名单</h2>
+      <ul>
+        <li>张青青</li>
+        <li>李小条</li>
+      </ul>
+    </li>
+  </ul>
+ </body>
+<script type="text/javascript">
+  var oUl = document.getElementById('list');
+  var aH2 = oUl.getElementsByTagName('h2');
+  var aUl = oUl.getElementsByTagName('ul');
+  var aLi=null;
+  var arrLi=[];
+  for (var i=0;i<aH2.length;i++) {
+     aH2[i].index=i;
+     aH2[i].onclick=function(){
+      for( var i=0; i<aH2.length; i++ ){
+        if( i != this.index ){
+          aUl[i].style.display = 'none';
+          aH2[i].className = '';
+        }
+      }
+       if (this.className=="") {
+        aUl[this.index].style.display="block"
+        this.className = 'active';
+       }else{
+        aUl[this.index].style.display="none"
+        this.className = '';
+       }
+     }
+  };
+    for(var i=0;i<aUl.length;i++) {
+     aLi=aUl[i].getElementsByTagName('li');
+     for( var j=0; j<aLi.length; j++ ){
+        arrLi.push( aLi[j] );
+      }
+    };
+
+   for (var i=0;i<arrLi.length;i++) {
+        arrLi[i].onclick = function (){
+           for( var i=0; i<arrLi.length; i++ ){
+          if( arrLi[i] !=this){
+            arrLi[i].className="";
+          }
+        }
+
+          if (this.className=="") {
+              this.className="hover";
+          }else{
+              this.className="";
+          };
+
+        }
+
+   };
+
+</script>
+</html>
