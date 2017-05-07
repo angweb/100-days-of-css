@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+ <meta charset="UTF-8">
+ <head> 
+  <title>图片库</title> 
+ </head>
+ <style type="text/css">
+   a{
+   	text-decoration: none;
+   }
+   .box{
+   	width: 700px;
+   	min-height: 700px;
+   	height: auto;
+   	margin: 0 auto;
+   	background: #f0f0f0;
+   	padding:10px;
+   }
+   .box h1{
+      text-align: center;
+   }
+   li{
+   	display: inline-block;
+   	list-style: none;
+   	padding: 0 20px;
+   }
+   a{
+   	color: #000;
+   }
+   a:hover{
+   	color: #ff870c;
+   }
+   ul{
+   	text-align: center;
+   }
+  .imgbox{
+  	text-align: center;
+  	padding-top: 20px;
+  	color: #ff870c;
+  }
+ </style> 
+ <body> 
+ <div class="box">
+ <h1>图片库案列</h1>
+  <ul>
+  	<li>
+  		<a href="img/1.png" title="这是第一张图片" onclick="  showPic(this); return false;">onepic</a>
+  	</li>
+  	<li>
+  		<a href="img/2.png" title="这是第二张图片" onclick="showPic(this); return false;">twopic</a>
+  	</li>
+  	<li>
+  		<a href="img/3.png" title="这是第三张图片" onclick="showPic(this); return false;">threepic</a>
+  	</li>
+  	<li>
+  		<a href="img/4.png" title="这是第四张图片" onclick="showPic(this); return false;">fourpic</a>
+  	</li>
+  </ul>
+  <div class="imgbox">
+  	<img src="img/1.png" id="img">
+  	<p id="text">这是第一张图片</p>
+  </div>
+  </div>
+ </body>
+ <script type="text/javascript">
+    function showPic(whichpic) {
+    	var Img = whichpic.getAttribute("href");
+    	var oImg =document.getElementById('img');
+    	oImg.setAttribute("src",Img);
+    	var oText =document.getElementById('text');
+    	var text = whichpic.getAttribute("title");
+        oText.firstChild.nodeValue = text;
+    }
+ </script>
+</html>
