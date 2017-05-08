@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+ <meta charset="UTF-8">
+ <head> 
+  <title>选项卡原理--json数组格式</title> 
+ </head> 
+ <style type="text/css">
+ .box{
+  width: 900px;
+  margin: 10px auto;
+ }
+  .nav li{
+    list-style: none;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    border:1px solid red;
+    margin-right: 10px;
+    text-align:center;
+  }
+  .mainbox li{
+    list-style: none;
+    width: 200px;
+    height:200px;
+    float: left;
+    margin-right: 10px;
+  }
+
+  .mainbox li img{
+    width: 100%;
+    height:100%;
+  }
+/*清理浮动*/
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0} 
+.clearfloat{zoom:1} 
+/*清理浮动*/
+.nav_active{
+  background: pink;
+  color: #fff;
+}
+p{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+ </style>
+
+<body> 
+<div class="box">
+  <ul id="nav" class="nav clearfloat">
+  	<li class="nav_active">选项一</li>
+  	<li>选项二</li>
+  	<li>选项三</li>
+  </ul>
+  <div class="mainbox" id="main">
+    <ul class="one clearfloat" id="main">
+
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+  var arrmain = [
+    [{
+       img:"img/one(1).jpg",
+       tite:"夏日学校",
+       cont:"夕阳西下，断肠人在天涯"
+       },
+     {
+         img:"img/one(2).jpg",
+       tite:"峨眉山之颠",
+       cont:"海上月是天生月，眼前人是心上人"
+       },
+     {
+         img:"img/one(3).jpg",
+       tite:"日出",
+       cont:"日出江花红胜火"
+       },
+     {
+        img:"img/one(4).jpg",
+       tite:"青城山",
+       cont:"问鼎青城山"
+    }],
+      
+       [{
+       img:"img/one(5).jpg",
+       tite:"青城山",
+       cont:"落霞与孤鹜齐飞"
+       },
+     {
+         img:"img/one(6).jpg",
+       tite:"MJ",
+       cont:"you are not alone"
+       },
+     {
+         img:"img/one(7).jpg",
+       tite:"学校晚霞",
+       cont:"壮士一去不复回"
+       },
+     {
+        img:"img/one(8).jpg",
+       tite:"MJ",
+       cont:"我好想你，想再见你一面"
+    }],
+        [{
+       img:"img/one(9).jpg",
+       tite:"学校风光",
+       cont:"恰同学少年"
+       },
+     {
+         img:"img/one(10).jpg",
+       tite:"学校操场",
+       cont:"挥一挥衣袖不带走一片云彩"
+       },
+     {
+         img:"img/one(11).jpg",
+       tite:"MJ",
+       cont:"思念如洪"
+       },
+     {
+        img:"img/one(12).jpg",
+       tite:"茶花",
+       cont:"独自开"
+    }],
+ ];
+var nav = document.getElementById('nav');
+var navlist = nav.getElementsByTagName('li');
+var main = document.getElementById('main');
+for(var i=0;i<navlist.length;i++){
+   navlist[i].index=i;
+   navlist[i].onclick=function () {
+     var litnumber = this.index;
+     for(var j=0;j<navlist.length;j++){
+       navlist[j].className = "";
+     }
+     this.className="nav_active";
+     main.innerHTML="";
+        for(var g=0;g<arrmain[litnumber].length;g++){
+         main.innerHTML+="<li>"+
+            "<img src="+arrmain[litnumber][g].img+">"+
+            "<p>"+arrmain[litnumber][g].tite+"</p>"+
+            "<p>"+arrmain[litnumber][g].cont+"</p>"+
+         "</li>";
+     }
+   }
+}
+    function show (n) {
+       for(var g=0;g<arrmain[n].length;g++){
+         main.innerHTML+="<li>"+
+            "<img src="+arrmain[n][g].img+">"+
+            "<p>"+arrmain[n][g].tite+"</p>"+
+            "<p>"+arrmain[n][g].cont+"</p>"+
+         "</li>";
+     }
+}
+ show(0);
+</script>
+</body>
+</html>
