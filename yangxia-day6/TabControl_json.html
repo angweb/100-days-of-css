@@ -48,9 +48,9 @@ p{
 <body> 
 <div class="box">
   <ul id="nav" class="nav clearfloat">
-  	<li class="nav_active">选项一</li>
-  	<li>选项二</li>
-  	<li>选项三</li>
+    <li class="nav_active">选项一</li>
+    <li>选项二</li>
+    <li>选项三</li>
   </ul>
   <div class="mainbox" id="main">
     <ul class="one clearfloat" id="main">
@@ -125,25 +125,7 @@ p{
 var nav = document.getElementById('nav');
 var navlist = nav.getElementsByTagName('li');
 var main = document.getElementById('main');
-for(var i=0;i<navlist.length;i++){
-   navlist[i].index=i;
-   navlist[i].onclick=function () {
-     var litnumber = this.index;
-     for(var j=0;j<navlist.length;j++){
-       navlist[j].className = "";
-     }
-     this.className="nav_active";
-     main.innerHTML="";
-        for(var g=0;g<arrmain[litnumber].length;g++){
-         main.innerHTML+="<li>"+
-            "<img src="+arrmain[litnumber][g].img+">"+
-            "<p>"+arrmain[litnumber][g].tite+"</p>"+
-            "<p>"+arrmain[litnumber][g].cont+"</p>"+
-         "</li>";
-     }
-   }
-}
-    function show (n) {
+function show (n) {
        for(var g=0;g<arrmain[n].length;g++){
          main.innerHTML+="<li>"+
             "<img src="+arrmain[n][g].img+">"+
@@ -153,6 +135,18 @@ for(var i=0;i<navlist.length;i++){
      }
 }
  show(0);
+for(var i=0;i<navlist.length;i++){
+   navlist[i].index=i;
+   navlist[i].onclick=function () {
+     var litnumber = this.index;
+     for(var j=0;j<navlist.length;j++){
+       navlist[j].className = "";
+     }
+     this.className="nav_active";
+     main.innerHTML="";
+         show(litnumber);
+}
+};   
 </script>
 </body>
 </html>
