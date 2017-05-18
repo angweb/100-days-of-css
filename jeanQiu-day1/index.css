@@ -1,0 +1,563 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+
+/*清除浮动*/
+
+
+/*页面头部*/
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 95px;
+	background-color: rgba(227, 229, 232, 0.5);
+	z-index: 20;
+}
+
+
+/*顶部横线*/
+
+.fline {
+	float: left;
+	width: 20%;
+	height: 4px;
+	background: #c3a814;
+}
+
+.sline {
+	float: left;
+	width: 80%;
+	height: 4px;
+	background: #04d304;
+}
+
+
+/*logo*/
+
+.logo {
+	position: absolute;
+	top: 21px;
+	left: 5%;
+	display: block;
+	width: 180px;
+	height: 51px;
+	background: url(./images/logo.png) no-repeat;
+}
+
+
+/*联系方式*/
+
+.number {
+	position: absolute;
+	top: 0;
+	right: 5%;
+	display: block;
+	width: 283px;
+	height: 25px;
+	background: url(./images/number.png) no-repeat;
+	z-index: 10;
+}
+
+
+/*导航*/
+
+nav {
+	float: right;
+	margin-right: 5%;
+}
+
+nav li {
+	float: left;
+}
+
+nav li>a {
+	display: inline-block;
+	padding: 0 10px;
+	height: 91px;
+	line-height: 91px;
+	color: #000;
+}
+
+nav li>a:hover {
+	background-color: #fff;
+	color: #0aa233;
+}
+
+
+/*二级菜单*/
+
+.item {
+	position: absolute;
+	top: 100%;
+	width: 550px;
+	background-color: rgba(198, 203, 204, 0.4);
+}
+
+.item .left {
+	float: left;
+	margin-left: 15px;
+	margin-top: 25px;
+	width: 240px;
+	height: 275px;
+}
+
+.item .right {
+	float: right;
+	margin-top: 25px;
+	margin-right: 15px;
+	width: 260px;
+	height: 220px;
+}
+
+.item .left a {
+	display: block;
+	padding: 10px 0;
+	border-bottom: 1px solid #a5a0a0;
+	color: #0aa233;
+}
+
+
+/*关于我们*/
+
+.about {
+	display: none;
+}
+
+nav ul li {
+	position: relative;
+}
+
+nav ul li:hover .about {
+	display: block;
+}
+
+
+/*最新动态*/
+
+.date {
+	float: left;
+}
+
+.date time .day {
+	display: block;
+	text-align: center;
+	background-color: #0aa233;
+	color: #fff;
+}
+
+.date time .month {
+	display: block;
+	background-color: #a5a0a0;
+}
+
+.news-intro {
+	width: 220px;
+	float: right;
+}
+
+.aNews p {
+	font-size: 14px;
+	color: #605e5e;
+	/*多行超出显示省略号	*/
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+
+.news {
+	display: none;
+}
+
+nav ul li:hover .news {
+	display: block;
+	left: -84px;
+}
+
+
+/*产品中心*/
+
+.item.prod {
+	width: 490px;
+	display: none;
+}
+
+.item.prod .left {
+	width: 200px;
+	height: auto;
+}
+
+.group h4 {
+	color: #0aa233;
+}
+
+.item .left .group a {
+	font-size: 14px;
+	color: #817e7e;
+	border: none;
+}
+
+.group a::before {
+	content: "";
+	display: inline-block;
+	margin-right: 5px;
+	width: 5px;
+	height: 9px;
+	background: url(images/prod_icon.png) no-repeat;
+}
+
+nav ul li:hover .prod {
+	display: block;
+	left: -168px;
+}
+
+
+/*优质生活*/
+
+.life {
+	display: none;
+}
+
+nav ul li:hover .life {
+	display: block;
+	left: -252px;
+}
+
+
+/*购买方式*/
+
+.mode {
+	display: none;
+}
+
+nav ul li:hover .mode {
+	display: block;
+	left: -336px;
+}
+
+
+/*加入我们*/
+
+.career {
+	display: none;
+}
+
+nav ul li:hover .career {
+	display: block;
+	left: -420px;
+}
+
+
+/*section 1*/
+
+.promotional {
+	position: relative;
+	width: 100%;
+	height: 940px;
+	background: url(images/b3.jpg) no-repeat center;
+	background-size: cover;
+}
+
+.btnBottom {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	-webkit-animation: move-btn 1s ease infinite;
+}
+
+
+/*btn动画*/
+
+@-webkit-keyframes move-btn {
+	0% {
+		-webkit-transform: translateY(-30px);
+	}
+	50% {
+		-webkit-transform: translateY(0px);
+		opacity: .5;
+	}
+	100% {
+		-webkit-transform: translateY(-30px);
+	}
+}
+
+
+/*section 2*/
+
+.company-intro {
+	position: relative;
+	padding-top: 40px;
+	height: 490px;
+	background-color: #F7F2EC;
+}
+
+.prov,
+.next {
+	position: absolute;
+	top: 50%;
+	display: block;
+	width: 70px;
+	height: 70px;
+}
+
+.prov {
+	left: 20px;
+	background: url(images/btnCtrl.png) 0 0 no-repeat;
+}
+
+.next {
+	right: 20px;
+	background: url(images/btnCtrl.png) -70px 0 no-repeat;
+}
+
+.scroll {
+	margin: auto;
+	width: 1025px;
+	overflow: hidden;
+}
+
+.scroll ul {
+	width: 2050px;
+}
+
+.scroll ul li {
+	float: left;
+}
+
+
+/*section 3*/
+
+.products {
+	height: 645px;
+	background: url(images/bg.jpg) no-repeat;
+	background-size: cover;
+}
+
+.prod-list {
+	padding-top: 150px;
+	width: 1000px;
+	margin: auto;
+}
+
+.prod {
+	display: inline-block;
+	width: 326px;
+	height: 326px;
+}
+
+.prod1 {
+	background: url(images/prod-1.png) no-repeat;
+	background-size: cover;
+}
+
+.prod2 {
+	background: url(images/prod-2.png) no-repeat;
+	background-size: cover;
+}
+
+.prod2:hover {
+	background-image: url(images/prod-2-hover.png);
+}
+
+.prod3 {
+	background: url(images/prod-3.png) no-repeat;
+	background-size: cover;
+}
+
+.prod3:hover {
+	background-image: url(images/prod-3-hover.png);
+}
+
+
+/*section 4*/
+
+.food-life {
+	height: 645px;
+	background: url(images/banner.jpg) no-repeat;
+	background-size: cover;
+}
+
+.oil {
+	position: relative;
+	margin: 0 auto;
+	width: 1000px;
+	height: 100%;
+}
+
+.oil>img {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.oil>a {
+	position: absolute;
+	top: 150px;
+	right: 0;
+}
+
+
+/*section 5*/
+
+.events {
+	height: 750px;
+	padding-top: 80px;
+	overflow: hidden;
+}
+
+.title {
+	width: 960px;
+	margin: auto;
+}
+
+.title a {
+	float: right;
+	font-size: 14px;
+	color: #0aa233;
+}
+
+.title a::after {
+	content: ">>";
+}
+
+.news-list {
+	width: 960px;
+	margin: auto;
+}
+
+.news-list li {
+	float: left;
+	border-bottom: 1px solid #a5a0a0;
+}
+
+.news-list li:nth-child(n+3) {
+	border: none;
+}
+
+.item-news {
+	width: 480px;
+	height: 275px;
+	padding: 20px;
+}
+
+.item-news .date {
+	margin-left: 40px;
+}
+
+.item-news .date .day {
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #fff;
+	color: #0aa233;
+}
+
+.item-news .date .month {
+	background-color: #fff;
+	border-bottom: 1px solid #a5a0a0;
+	padding-bottom: 5px;
+}
+
+.item-news .content {
+	float: left;
+	margin-left: 20px;
+	width: 325px;
+}
+
+.item-news .content h2 {
+	margin-top: 20px;
+	font-size: 14px;
+	text-align: justify;
+}
+
+.item-news .content h2:hover {
+	color: #0aa233;
+}
+
+.item-news .content p {
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+.img {
+	width: 325px;
+	height: 140px;
+	padding: 5px;
+	border: 1px solid #a5a0a0;
+}
+
+.img img {
+	width: 100%;
+	height: 100%;
+}
+
+
+/*视频*/
+
+.video {
+	padding-top: 80px;
+	height: 620px;
+	background: url(images/video-banner.jpg) no-repeat;
+	background-size: cover;
+}
+
+.play {
+	margin: 10px auto;
+	width: 960px;
+	height: 429px;
+	cursor: pointer;
+	background: url(images/video-bg.jpg) no-repeat;
+	background-size: cover;
+}
+
+
+/*页脚*/
+
+footer {
+	height: 170px;
+	font-size: 12px;
+}
+
+footer a {
+	display: block;
+	padding: 0 5px;
+	color: #000;
+}
+
+.lfooter {
+	float: left;
+	width: 500px;
+	margin-left: 140px;
+	margin-top: 20px;
+}
+
+footer ul li {
+	float: left;
+}
+
+.lfooter ul li+li {
+	border-left: 1px solid #a5a0a0;
+}
+
+.lfooter p {
+	margin-left: 5px;
+	line-height: 1.5em;
+}
+
+.reenoo-logo {
+	margin-top: 40px;
+}
+
+.rfooter {
+	float: right;
+	margin-right: 140px;
+	margin-top: 20px;
+	text-align: center;
+}
