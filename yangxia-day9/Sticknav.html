@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+ <meta charset="UTF-8">
+ <head> 
+  <title>置顶导航</title> 
+ </head> 
+ <style type="text/css">
+  p{
+  	height: 200px;
+  	text-align: center;
+  	padding-left: 20px;
+  	background: #f0f0f0;
+  	line-height: 200px;
+  }
+ .box{
+ 	margin: 0 auto;
+ }
+ .stick{
+ 	height: 50px;
+ 	line-height: 50px;
+ 	background: red;
+ }
+ .sticktop{
+ 	position: fixed;
+ 	top: 0;
+ 	left: 0;
+ 	right: 0;
+ }
+ </style>
+<body> 
+<div class="box">
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div class="stick" id="stick">我是置顶导航条</div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+</div>
+<script type="text/javascript">
+    // 原理：
+    // 当滚动页面到导航条的位置的时候  滚动条停靠在顶部
+    // 获取滚动的值是否等于或者大于 置顶导航距离底部的距离
+  
+  var stick = document.getElementById('stick');
+  var navheight = stick.offsetTop;
+  window.onscroll = function(){
+  	// 获取滚动的高度
+    var st = document.documentElement.scrollTop || document.body.scrollTop;
+    if (st >= navheight){
+        stick.className = "stick sticktop";
+    }else{
+    	stick.className = "stick";
+    }
+  }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
